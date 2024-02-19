@@ -1,0 +1,265 @@
+---
+import logo_black from "../../../public/assets/logo_black.svg";
+import logo_white from "../../../public/assets/logo_white.svg";
+import ThemeIcon from "../header/ThemeIcon.astro";
+---
+
+<header
+  x-data="{ open: false }"
+  class="header transition-all fixed w-full top-0 z-50 px-4 sm:px-6 bg-primary-50 dark:bg-primary-900 dark:text-primary-200"
+>
+  <div
+    class="header-container mx-auto flex max-w-2xl items-center justify-between lg:max-w-7xl lg:px-8"
+  >
+    <!-- Brand logo -->
+
+    <div class="flex">
+      <a href="/" class="">
+        <div class="logo transition-all">
+          <span class="text-2xl sm:text-2xl lg:text-2xl">pacholczyk</span>
+          <span class="text-2xl sm:text-2xl lg:text-2xl">winiecki</span>
+          <!-- <span class="small">meble na wymiar</span> -->
+          <span class="small">meble na wymiar</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Actions -->
+    <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
+      <!-- Toggle theme mode -->
+
+      <ThemeIcon />
+
+      <button
+        type="button"
+        class="menu-toggle2 inline-flex h-14 w-14 items-center justify-center rounded-full text-primary-950 ring-primary-950 transition hover:bg-primary-500/10 focus:outline-none focus-visible:ring-2 dark:text-primary-200 dark:hover:bg-primary-400/10"
+      >
+        <div
+          class="menu-toggle rounded-full hover:bg-primary-500/10 dark:hover:bg-primary-400/10"
+        >
+          <span class="bg-primary-950 dark:bg-primary-200"></span>
+          <span class="bg-primary-950 dark:bg-primary-200"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu content -->
+
+  <nav
+    class="menu bg-primary-50 text-primary-950 antialiased dark:bg-primary-900 dark:text-primary-200"
+  >
+    <div
+      class="mx-auto flex max-w-2xl items-center justify-between px-4 pt-4 pb-4 sm:px-6 sm:pt-6 sm:pb-6 lg:max-w-7xl lg:px-8"
+    >
+      <div class="logo">
+        <span class="text-2xl sm:text-2xl lg:text-3xl">pacholczyk</span>
+        <span class="text-2xl sm:text-2xl lg:text-3xl">winiecki</span>
+        <span class="small">meble na wymiar</span>
+      </div>
+      <div class="-mr-2 flex items-center space-x-2 sm:space-x-3">
+        <div
+          class="menu-close h-14 w-14 rounded-full text-primary-950 ring-primary-950 transition hover:bg-primary-500/10 focus:outline-none focus-visible:ring-2 dark:text-primary-200 dark:hover:bg-primary-400/10"
+        >
+          <span class="bg-primary-950 dark:bg-primary-200"></span>
+          <span class="bg-primary-950 dark:bg-primary-200"></span>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li><a href="#" class="nav-link active-link">Home</a></li>
+      <li><a href="#" class="nav-link">O Nas</a></li>
+      <li><a href="#" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .logo,
+  .inner-logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+  }
+  .logo span,
+  .inner-logo span {
+    line-height: 0.85;
+    letter-spacing: 1px;
+  }
+  .logo .small {
+    font-size: 10px;
+  }
+
+  .header {
+    padding-top: 1rem /* 16px */;
+    padding-bottom: 1rem /* 16px */;
+  }
+  .header.active {
+    padding-top: 0.5rem /* 16px */;
+    padding-bottom: 0.5rem /* 16px */;
+  }
+
+  .header.active .logo {
+    scale: 0.85;
+    transform-origin: left;
+  }
+
+  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms; */
+
+  .header.active {
+    /* padding-top: 0.75rem;
+    padding-bottom: 0.75rem; */
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); */
+    /* opacity: 0.5; */
+  }
+
+  /* ----------------------------------------------------------- */
+
+  .inner-logo {
+    position: absolute;
+    top: 28%;
+    left: 10%;
+  }
+
+  .menu-toggle {
+    left: 3%;
+    width: 2rem;
+    height: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .menu-toggle span:nth-child(1) {
+    width: 70%;
+    height: 2px;
+    transition: 0.5s;
+  }
+
+  .menu-toggle:hover span {
+    width: 100%;
+    transition: 0.5s;
+  }
+
+  .menu-toggle span:nth-child(2) {
+    width: 100%;
+    height: 2px;
+  }
+
+  .welcome {
+    position: relative;
+    top: 25vh;
+    left: 12%;
+    font-size: 1.4rem;
+  }
+
+  .sub {
+    color: #cbcfd3;
+  }
+
+  /* menu */
+
+  nav {
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: -100vh;
+    transition: 0.5s;
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  nav.active {
+    top: 0;
+    transition: 0.5s;
+  }
+
+  .logo-nav {
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 12%;
+  }
+
+  nav ul {
+    position: absolute;
+    left: 50%;
+    list-style: none;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    height: 35%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .nav-link {
+    position: relative;
+    left: 0;
+    text-decoration: none;
+    font-size: 2.5rem;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .nav-link.active {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .nav-link.active:hover {
+    /* color: white; */
+    left: 10%;
+    transition: 0.5s;
+  }
+
+  .menu-close {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .menu-close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    transform-origin: center;
+  }
+
+  .menu-close span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .menu-close span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+</style>
+
+<script>
+  const headerScroll = () => {
+    const headerElement = document.querySelector(".header");
+    if (headerElement) {
+      if (window.scrollY >= 30) {
+        headerElement.classList.add(
+          "active",
+          "shadow-sm",
+          "shadow-primary-200",
+          "dark:shadow-primary-800"
+        );
+      } else {
+        headerElement.classList.remove(
+          "active",
+          "shadow-sm",
+          "shadow-primary-200",
+          "dark:shadow-primary-800"
+        );
+      }
+    }
+  };
+  window.addEventListener("scroll", headerScroll);
+</script>

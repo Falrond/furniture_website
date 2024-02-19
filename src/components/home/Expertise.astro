@@ -1,0 +1,125 @@
+---
+const faq = [
+  {
+    question: "Jakie są korzyści z wybierania mebli na wymiar?",
+    answer: [
+      "Meble na wymiar są idealnie dopasowane do Twoich potrzeb i przestrzeni, co pozwala maksymalnie wykorzystać dostępną przestrzeń.",
+      "Dzięki meblom na wymiar masz pełną kontrolę nad stylem, kolorem i materiałami, co pozwala stworzyć unikalne wnętrze, które odzwierciedla Twój gust i osobowość.",
+      "Wybierając meble na wymiar, masz gwarancję wysokiej jakości wykonania i trwałości, ponieważ są one dostosowane do indywidualnych potrzeb i oczekiwań.",
+    ],
+  },
+  {
+    question: "Jak przebiega proces projektowania i wykonania mebli na wymiar?",
+    answer: [
+      "Na początku odbywa się konsultacja, podczas której omawiane są Twoje potrzeby i preferencje.",
+      "Następnie nasi projektanci tworzą wizualizacje 3D, które pozwalają zobaczyć efekt końcowy mebli w Twoim pomieszczeniu.",
+      "Po zaakceptowaniu projektu przystępujemy do produkcji mebli, a następnie montażu u Ciebie w domu.",
+    ],
+  },
+  {
+    question: "Jak długo trwa proces realizacji mebli na wymiar?",
+    answer: [
+      "Czas realizacji zależy od skali projektu oraz dostępności materiałów.",
+      "Przeważnie proces od konsultacji do montażu trwa od kilku tygodni do kilku miesięcy, w zależności od stopnia skomplikowania projektu.",
+    ],
+  },
+  {
+    question:
+      "Czy istnieje możliwość dostosowania projektu w trakcie realizacji?",
+    answer: [
+      "Tak, jesteśmy otwarci na wszelkie sugestie i zmiany w trakcie procesu realizacji projektu.",
+      "W przypadku potrzeby wprowadzenia zmian, prosimy o jak najszybszy kontakt z naszym zespołem projektowym.",
+    ],
+  },
+  // {
+  //   question: "Czy oferujecie gwarancję na wykonane meble?",
+  //   answer: [
+  //     "Tak, wszystkie nasze meble objęte są gwarancją na jakość wykonania oraz materiały użyte do produkcji.",
+  //     "W razie jakichkolwiek problemów z wykonaniem mebli, prosimy o kontakt, a nasz zespół postara się jak najszybciej rozwiązać problem.",
+  //   ],
+  // },
+  // {
+  //   question: "Jakie materiały mogę wybrać do wykonania mebli na wymiar?",
+  //   answer: [
+  //     "Oferujemy szeroki wybór materiałów, w tym drewno, laminat, forniry, szkło, metal i wiele innych.",
+  //     "Decyzja o wyborze materiałów zależy od Twoich preferencji oraz indywidualnych potrzeb funkcjonalnych.",
+  //   ],
+  // },
+  // {
+  //   question: "Czy mogę zobaczyć przykłady waszych wcześniejszych projektów?",
+  //   answer: [
+  //     "Tak, zapraszamy do galerii na naszej stronie internetowej, gdzie prezentujemy zdjęcia naszych wcześniejszych projektów.",
+  //     "Możemy także zapewnić referencje od naszych zadowolonych klientów na życzenie.",
+  //   ],
+  // },
+  // {
+  //   question: "Jak mogę umówić się na konsultację z waszym zespołem?",
+  //   answer: [
+  //     "Aby umówić się na konsultację, prosimy o kontakt telefoniczny lub poprzez formularz kontaktowy na naszej stronie internetowej.",
+  //     "Nasz zespół skontaktuje się z Tobą w celu ustalenia dogodnego terminu spotkania.",
+  //   ],
+  // },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+        Najczęściej zadawane pytania
+      </h2>
+      <div class="lg:col-span-2">
+        <div class="w-full mx-auto" x-data="{selected:null}">
+          <ul class="shadow-box">
+            {
+              faq.map((question, index) => (
+                <li
+                  class="relative rounded-3xl px-4 transition-all"
+                  x-data={`{ id: ${index + 1} }`}
+                  x-bind:class="{ 'bg-primary-500/10 dark:bg-primary-400/10': selected === id }"
+                >
+                  <button
+                    type="button"
+                    class="group block w-full py-6 text-left transition focus-visible:outline-none"
+                    @click="selected !== id ? selected = id : selected = null"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span class="font-medium text-lg">
+                        {question.question}
+                      </span>
+                      <span class="ico-plus" />
+                      <span class="ml-6 flex h-7 items-center">
+                        <svg
+                          class="text-primary-600 dark:text-primary-400 h-6 w-6 rotate-0 transform transition duration-200 ease-in-out"
+                          x-bind:class="{ '-rotate-180': selected === id, 'rotate-0': selected !== id }"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z" />
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                  <div
+                    class="relative overflow-hidden transition-all max-h-0 duration-700"
+                    style=""
+                    x-ref="container1"
+                    x-bind:style="selected == id ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                  >
+                    <div class="pb-6 pl-0 pr-6 pt-0">
+                      <p class="text-primary-950/70 dark:text-primary-200/70 text-base">
+                        {question.answer}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

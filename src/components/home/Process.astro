@@ -1,0 +1,122 @@
+---
+import Image from "astro/components/Image.astro";
+import KitchenModel from "../../assets/kitchen_model.png";
+import KitchenDesign from "../../assets/kitchen_3d_design_2.webp";
+import KitchenFinal from "../../assets/kitchen_final.jpg";
+---
+
+<section class="pb-16 sm:pb-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+        Jak działamy
+      </h2>
+      <div
+        class="order-2 mt-8 lg:order-1 lg:mt-0 lg:flex lg:items-center lg:-mx-6"
+      >
+        <!-- <img
+          class="object-cover w-full lg:w-1/2 lg:mx-6 h-72 lg:h-96"
+          src="https://images.unsplash.com/photo-1598901847919-b95dd0fabbb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+          alt=""
+        /> -->
+        <Image
+          alt="gallery"
+          class="block lg:w-1/2 lg:mx-6 h-72 lg:h-96 w-full rounded-3xl object-cover object-center"
+          src={KitchenModel}
+        />
+        <div class="mt-8 lg:w-1/2 lg:mx-6 lg:mt-0">
+          <h3
+            class="font-serif text-2xl text-white capitalize md:text-4xl lg:text-5xl"
+          >
+            Discover yourself with nature
+          </h3>
+          <p
+            class="mt-4 text-base text-left text-primary-950/90 dark:text-primary-200/90 sm:text-lg"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+            nisi fugiat dicta impedit sed quisquam quas veritatis consectetur
+            neque saepe, autem facilis dolore officiis minima explicabo
+            perferendis ab porro magnam!
+          </p>
+          <!-- <a
+                class="inline-flex px-6 py-3 mt-6 text-white border-2 border-white hover:bg-[#475F45] duration-300 transition-colors"
+                href="#"
+              >
+                Learn More
+              </a> -->
+          <!-- <a
+            href="/pricing"
+            class="inline-flex items-center justify-center rounded-full border border-transparent bg-primary-950 px-5 py-3 text-base font-medium text-white transition hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-200 dark:text-primary-950 dark:hover:bg-primary-400 dark:focus-visible:outline-primary-400"
+          >
+            Dowiedz się więcej
+          </a> -->
+        </div>
+      </div>
+      <!-- ------------------------------------------------------------- -->
+      <div
+        class="order-2 mt-8 lg:order-1 lg:mt-0 lg:flex lg:flex-row-reverse lg:items-center lg:-mx-6"
+      >
+        <!-- <img
+          class="object-cover w-full lg:w-1/2 lg:mx-6 h-72 lg:h-96"
+          src="https://images.unsplash.com/photo-1598901847919-b95dd0fabbb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+          alt=""
+        /> -->
+        <Image
+          alt="gallery"
+          class="block lg:w-1/2 lg:mx-6 h-72 lg:h-96 w-full rounded-3xl object-cover object-center"
+          src={KitchenDesign}
+        />
+        <div class="mt-8 lg:w-1/2 lg:mx-6 lg:mt-0">
+          <h3
+            class="font-serif text-2xl text-white capitalize md:text-4xl lg:text-5xl"
+          >
+            Discover yourself with nature
+          </h3>
+          <p class="mt-4 text-gray-200">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+            nisi fugiat dicta impedit sed quisquam quas veritatis consectetur
+            neque saepe, autem facilis dolore officiis minima explicabo
+            perferendis ab porro magnam!
+          </p>
+        </div>
+      </div>
+      <!-- ------------------------------------------------------------------------------------------------- -->
+      <div
+        class="order-2 mt-8 lg:order-1 lg:mt-0 lg:flex lg:items-center lg:-mx-6"
+      >
+        <Image
+          alt="gallery"
+          class="block lg:w-1/2 lg:mx-6 h-72 lg:h-96 w-full rounded-3xl object-cover object-center"
+          src={KitchenFinal}
+        />
+        <div class="mt-8 lg:w-1/2 lg:mx-6 lg:mt-0">
+          <h3
+            class="font-serif text-2xl text-white capitalize md:text-4xl lg:text-5xl"
+          >
+            Discover yourself with nature
+          </h3>
+          <p
+            class="mt-4 text-base text-left text-primary-950/90 dark:text-primary-200/90 sm:text-lg"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+            nisi fugiat dicta impedit sed quisquam quas veritatis consectetur
+            neque saepe, autem facilis dolore officiis minima explicabo
+            perferendis ab porro magnam!
+          </p>
+          <!-- <a
+                class="inline-flex px-6 py-3 mt-6 text-white border-2 border-white hover:bg-[#475F45] duration-300 transition-colors"
+                href="#"
+              >
+                Learn More
+              </a> -->
+          <!-- <a
+            href="/pricing"
+            class="inline-flex items-center justify-center rounded-full border border-transparent bg-primary-950 px-5 py-3 text-base font-medium text-white transition hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-200 dark:text-primary-950 dark:hover:bg-primary-400 dark:focus-visible:outline-primary-400"
+          >
+            Dowiedz się więcej
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
