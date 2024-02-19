@@ -13,6 +13,7 @@
     "@alpinejs/collapse": "^3.13.5",
     "@astrojs/check": "^0.5.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/montserrat": "^5.0.17",
     "@fontsource/inter": "^5.0.16",
     "alpinejs": "^3.13.5",
     "astro": "^4.3.6",
