@@ -6,3 +6,7 @@ html.dark {
 .dark .nav-links a {
   color: #fff;
 }
+
+html {
+  scroll-behavior: smooth;
+}
