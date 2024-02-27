@@ -11,9 +11,12 @@ document.addEventListener("astro:page-load", () => {
   function openMenu() {
     menu.classList.add("active");
     navLinks.forEach((link, idx) => {
-      setTimeout(() => {
-        link.classList.add("active");
-      }, (idx + 1) * 220);
+      setTimeout(
+        () => {
+          link.classList.add("active");
+        },
+        (idx + 1) * 220
+      );
     });
   }
 
@@ -28,4 +31,31 @@ document.addEventListener("astro:page-load", () => {
       });
     });
   }
+});
+
+function createLightGallery() {
+  // @ts-ignore
+  lightGallery(document.getElementById("lightgallery"), {
+    selector: ".img-item",
+  });
+}
+
+createLightGallery();
+
+document.addEventListener("astro:after-swap", () => {
+  (function () {
+    window.scrollTo(0, 0);
+  })();
+  createLightGallery();
+  var logo = document.querySelector(".logo");
+  logo.addEventListener("click", function (event) {
+    // Sprawdź aktualny adres URL
+    var currentPage = window.location.pathname;
+
+    // Jeśli aktualna strona to strona główna ("/"), wykonaj przewijanie do góry i zapobiegnij domyślnej akcji
+    if (currentPage === "/" || currentPage === "" || currentPage === "/#") {
+      event.preventDefault();
+      window.scrollTo({ top: 10, behavior: "smooth" });
+    }
+  });
 });
