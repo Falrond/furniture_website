@@ -22,7 +22,7 @@ import pic12 from "../../assets/12.jpg";
       </h2>
       <div class="">
         <div
-          class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
+          class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
         >
           <div class="flex flex-wrap">
             <div class="w-full">
@@ -82,7 +82,42 @@ import pic12 from "../../assets/12.jpg";
       </div>
     </div>
   </div>
-</section> -->
+</section> --><!-- ------------------------------------ -->
+<section class="pb-16 sm:pb-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+        Nasze realizacje
+      </h2>
+      <div class="">
+        <div
+          id="lightgallery"
+          class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
+        >
+          <div class="flex flex-wrap">
+            <div class="w-full img-item" data-src="src/assets/1.jpg">
+              <img
+                alt="gallery"
+                class="block h-full w-full rounded-3xl object-cover object-center"
+                src="src/assets/1.jpg"
+              />
+            </div>
+          </div>
+          <div class="flex flex-wrap">
+            <div class="w-full img-item" data-src="src/assets/2.jpg">
+              <img
+                alt="gallery"
+                class="block h-full w-full rounded-3xl object-cover object-center"
+                src="src/assets/2.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- --------------------------------------- -->
 <section id="portfolio" class="pb-16 sm:pb-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-12 sm:gap-16">
@@ -189,3 +224,10 @@ import pic12 from "../../assets/12.jpg";
     </div>
   </div>
 </section>
+
+<script>
+  // @ts-ignore
+  lightGallery(document.getElementById("lightgallery"), {
+    selector: ".img-item",
+  });
+</script>
